@@ -106,103 +106,98 @@
                     </ul>
                     <div class="prompt">mermaid render prorail_architecture.mmd</div>
                     <div style="background: #0a0e14; padding: 20px; border: 1px dashed var(--border-color); border-radius: 4px; overflow-x: auto;">
-                    <pre class="mermaid">
-                    flowchart TD
-                        %% 1. Define Nodes outside subgraphs
-                        Client([Internet Traffic])
-                        
-                        %% 2. Define Automation Nodes
-                        subgraph Automation [Platform Engineering]
-                            Bitbucket[Bitbucket]
-                            Jenkins[Jenkins CI/CD]
-                            Terraform[Terraform IaC]
-                        end
-
-                        %% 3. Define AKS Cluster Nodes
-                        subgraph AKS [Azure Kubernetes Service]
-                            Traefik{Traefik API Gateway}
-                            JavaApps[Mission Critical Java Apps]
-                            Keycloak[Keycloak IAM]
-                            RabbitMQ[(RabbitMQ)]
+                        <div class="mermaid">
+                        flowchart TD
+                            Client(["Internet Traffic"])
                             
-                            subgraph LGTM [LGTM Observability Stack]
-                                Grafana[Grafana Dashboard]
-                                Loki[Loki]
-                                Tempo[Tempo]
-                                Mimir[Mimir]
+                            subgraph Automation ["Platform Engineering"]
+                                Bitbucket["Bitbucket"]
+                                Jenkins["Jenkins CI/CD"]
+                                Terraform["Terraform IaC"]
                             end
-                        end
 
-                        %% 4. Draw Connections
-                        Client -->|HTTPS| Traefik
-                        Traefik -->|Route| JavaApps
-                        Traefik -->|Admin/Auth| Keycloak
-                        
-                        JavaApps <-->|Message Queue| RabbitMQ
-                        JavaApps <-->|Auth Tokens| Keycloak
-                        
-                        JavaApps -->|Logs| Loki
-                        JavaApps -->|Traces| Tempo
-                        JavaApps -->|Metrics| Mimir
-                        
-                        Grafana --> Loki
-                        Grafana --> Tempo
-                        Grafana --> Mimir
-                        
-                        Bitbucket -->|Trigger| Jenkins
-                        Jenkins -.->|Deploy| JavaApps
-                        Jenkins -.->|Updates| Keycloak
-                        Terraform -.->|Provision & RBAC| AKS
+                            subgraph AKS ["Azure Kubernetes Service"]
+                                Traefik{"Traefik API Gateway"}
+                                JavaApps["Mission Critical Java Apps"]
+                                Keycloak["Keycloak IAM"]
+                                RabbitMQ[("RabbitMQ")]
+                                
+                                subgraph LGTM ["LGTM Observability Stack"]
+                                    Grafana["Grafana Dashboard"]
+                                    Loki["Loki"]
+                                    Tempo["Tempo"]
+                                    Mimir["Mimir"]
+                                end
+                            end
 
-                        %% 5. Apply Custom Styling
-                        classDef default fill:#0d1117,stroke:#21262d,stroke-width:1px,color:#c9d1d9;
-                        classDef highlight fill:#161b22,stroke:#00ff66,stroke-width:2px,color:#00ff66;
-                        classDef db fill:#0d1117,stroke:#58a6ff,stroke-width:2px;
-                        
-                        class Traefik,Grafana,Terraform highlight;
-                        class RabbitMQ db;
-                    </pre>
+                            Client -->|HTTPS| Traefik
+                            Traefik -->|Route| JavaApps
+                            Traefik -->|Admin/Auth| Keycloak
+                            
+                            JavaApps -->|Message Queue| RabbitMQ
+                            RabbitMQ -->|Reply| JavaApps
+                            
+                            JavaApps -->|Auth Tokens| Keycloak
+                            Keycloak -->|Verify| JavaApps
+                            
+                            JavaApps -->|Logs| Loki
+                            JavaApps -->|Traces| Tempo
+                            JavaApps -->|Metrics| Mimir
+                            
+                            Grafana --> Loki
+                            Grafana --> Tempo
+                            Grafana --> Mimir
+                            
+                            Bitbucket -->|Trigger| Jenkins
+                            Jenkins -.->|Deploy| JavaApps
+                            Jenkins -.->|Updates| Keycloak
+                            Terraform -.->|Provision and RBAC| AKS
+
+                            classDef default fill:#0d1117,stroke:#21262d,stroke-width:1px,color:#c9d1d9;
+                            classDef highlight fill:#161b22,stroke:#00ff66,stroke-width:2px,color:#00ff66;
+                            classDef db fill:#0d1117,stroke:#58a6ff,stroke-width:2px;
+                            
+                            class Traefik,Grafana,Terraform highlight;
+                            class RabbitMQ db;
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/script.js"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: "dark"
+        });
 
-    <script>
+        let isMermaidRendered = false;
+
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
 
         tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
+            btn.addEventListener('click', async () => {
                 tabBtns.forEach(b => b.classList.remove('active'));
                 tabContents.forEach(c => c.classList.remove('active'));
 
-                // Add active class to clicked button
                 btn.classList.add('active');
-
-                // Show the corresponding content
+                
                 const tabId = btn.getAttribute('data-tab');
                 document.getElementById(tabId).classList.add('active');
+
+                if (tabId === 'prorail' && !isMermaidRendered) {
+                    setTimeout(async () => {
+                        await mermaid.run({ querySelector: '.mermaid' });
+                        isMermaidRendered = true;
+                    }, 50);
+                }
             });
-        });
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/script.js"></script>
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ 
-            startOnLoad: true,
-            theme: 'base',
-            themeVariables: {
-                primaryColor: '#0d1117',
-                primaryTextColor: '#c9d1d9',
-                primaryBorderColor: '#00ff66',
-                lineColor: '#58a6ff',
-                secondaryColor: '#161b22',
-                tertiaryColor: '#161b22'
-            }
         });
     </script>
 </body>
