@@ -104,6 +104,65 @@
                         <li><strong>Observability & Ingress Migration:</strong> Successful execution of a complex architectural transition to improve cluster performance. NGINX was migrated to <span class="highlight">Traefik</span> as a modern cloud-native API gateway. Additionally, the legacy ELK stack was replaced by the more efficient <span class="highlight">LGTM stack</span> (Grafana, Loki, Tempo, Mimir). This resulted in faster query times, integrated distributed tracing for the Java applications, and a drastically reduced resource footprint.</li>
                         <li><strong>IaC & Security Hardening:</strong> Transformation to a strict Infrastructure as Code model using <span class="highlight">Terraform</span>. Special focus on reducing the attack surface by applying the Cloud Adoption Framework (CAF): permanent 'Global Owner/Contributor' rights were eliminated and replaced with a fine-grained 'Least Privilege' Role-Based Access Control (RBAC) architecture.</li>
                     </ul>
+                    <div class="prompt">mermaid render prorail_architecture.mmd</div>
+                    <div style="background: #0a0e14; padding: 20px; border: 1px dashed var(--border-color); border-radius: 4px; overflow-x: auto;">
+                    <pre class="mermaid">
+                    flowchart TD
+                        %% 1. Define Nodes outside subgraphs
+                        Client([Internet Traffic])
+                        
+                        %% 2. Define Automation Nodes
+                        subgraph Automation [Platform Engineering]
+                            Bitbucket[Bitbucket]
+                            Jenkins[Jenkins CI/CD]
+                            Terraform[Terraform IaC]
+                        end
+
+                        %% 3. Define AKS Cluster Nodes
+                        subgraph AKS [Azure Kubernetes Service]
+                            Traefik{Traefik API Gateway}
+                            JavaApps[Mission Critical Java Apps]
+                            Keycloak[Keycloak IAM]
+                            RabbitMQ[(RabbitMQ)]
+                            
+                            subgraph LGTM [LGTM Observability Stack]
+                                Grafana[Grafana Dashboard]
+                                Loki[Loki]
+                                Tempo[Tempo]
+                                Mimir[Mimir]
+                            end
+                        end
+
+                        %% 4. Draw Connections
+                        Client -->|HTTPS| Traefik
+                        Traefik -->|Route| JavaApps
+                        Traefik -->|Admin/Auth| Keycloak
+                        
+                        JavaApps <-->|Message Queue| RabbitMQ
+                        JavaApps <-->|Auth Tokens| Keycloak
+                        
+                        JavaApps -->|Logs| Loki
+                        JavaApps -->|Traces| Tempo
+                        JavaApps -->|Metrics| Mimir
+                        
+                        Grafana --> Loki
+                        Grafana --> Tempo
+                        Grafana --> Mimir
+                        
+                        Bitbucket -->|Trigger| Jenkins
+                        Jenkins -.->|Deploy| JavaApps
+                        Jenkins -.->|Updates| Keycloak
+                        Terraform -.->|Provision & RBAC| AKS
+
+                        %% 5. Apply Custom Styling
+                        classDef default fill:#0d1117,stroke:#21262d,stroke-width:1px,color:#c9d1d9;
+                        classDef highlight fill:#161b22,stroke:#00ff66,stroke-width:2px,color:#00ff66;
+                        classDef db fill:#0d1117,stroke:#58a6ff,stroke-width:2px;
+                        
+                        class Traefik,Grafana,Terraform highlight;
+                        class RabbitMQ db;
+                    </pre>
+                    </div>
                 </div>
 
             </div>
@@ -130,6 +189,21 @@
         });
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/script.js"></script> </body>
+    <script src="/script.js"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#0d1117',
+                primaryTextColor: '#c9d1d9',
+                primaryBorderColor: '#00ff66',
+                lineColor: '#58a6ff',
+                secondaryColor: '#161b22',
+                tertiaryColor: '#161b22'
+            }
+        });
+    </script>
 </body>
 </html>
