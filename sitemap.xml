@@ -46,6 +46,28 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/about.html" />
   </url>
 
+    <!-- Dutch Projects -->
+  <url>
+    <loc>https://merux.dev/projects.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/projects.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://merux.dev/en/projects.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/projects.html" />
+  </url>
+
+  <!-- English Projects -->
+  <url>
+    <loc>https://merux.dev/en/projects.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/projects.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://merux.dev/en/projects.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/projects.html" />
+  </url>
+
   <!-- Helm Charts Subdomain -->
   <url>
     <loc>https://charts.merux.dev/</loc>

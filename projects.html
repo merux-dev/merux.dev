@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <title>Projecten | Portfolio - merux.dev</title>
+    <meta name="description" content="Bekijk de cloud native projecten en portfolio van merux.dev, waaronder enterprise AKS operaties bij ProRail en Sovereign Cloud oplossingen bij Centric.">
+    <meta name="keywords" content="merux, merux dev, portfolio, projecten, Nextcloud, Kubernetes, Sovereign Cloud, ProRail, Centric, Azure, AKS, Bicep, Terraform">
+    <meta name="author" content="merux.dev">
+    
+    <meta property="og:title" content="merux.dev | Portfolio & Projecten">
+    <meta property="og:description" content="Ontdek onze enterprise-grade cloud native en digitale soevereiniteit projecten.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://merux.dev/projects.html">
+    
+    <!-- SEO: Multilingual Hreflang Tags -->
+    <link rel="alternate" hreflang="nl" href="https://merux.dev/projects.html" />
+    <link rel="alternate" hreflang="en" href="https://merux.dev/en/projects.html" />
+    <link rel="alternate" hreflang="x-default" href="https://merux.dev/projects.html" />
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800">
+        <div class="logo">
+            <a href="/index.html">
+                <span class="matrix-text">merux.dev</span>
+            </a>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/index.html#home">Home</a></li>
+            <li><a href="/index.html#nextcloud">Nextcloud</a></li>
+            <li><a href="/index.html#helm-charts">Helm Charts</a></li>
+            <li><a href="/projects.html" class="active">Projecten</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <!-- Language Switcher -->
+            <li class="lang-switch">
+                <a href="/projects.html" class="active">NL</a> | <a href="/en/projects.html">EN</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="about-container">
+        <div class="terminal" data-aos="zoom-in" data-aos-duration="1000">
+            
+            <div class="terminal-header" style="flex-direction: column; padding: 0;">
+                
+                <div style="display: flex; align-items: center; padding: 10px 15px; width: 100%; border-bottom: 1px solid var(--border-color);">
+                    <div class="buttons">
+                        <div class="button red"></div>
+                        <div class="button yellow"></div>
+                        <div class="button green"></div>
+                    </div>
+                    <div class="title">job@merux.dev: ~/projects</div>
+                </div>
+
+                <div class="terminal-tabs">
+                    <button class="tab-btn active" data-tab="centric">
+                        <span class="tab-icon">📄</span> centric_sovereign.md
+                    </button>
+                    <button class="tab-btn" data-tab="prorail">
+                        <span class="tab-icon">📄</span> prorail_aks.md
+                    </button>
+                    <div class="tab-add">+</div>
+                </div>
+            </div>
+
+            <div class="terminal-body">
+                
+                <div id="centric" class="tab-content active">
+                    <div class="prompt">cat centric_sovereign.md</div>
+                    <h3 style="color: #fff; margin-bottom: 10px; margin-top: 20px;">Centric: Public Sector Azure & Sovereign Cloud</h3>
+                    <div class="subtitle" style="font-size: 14px; margin-bottom: 20px;">Rol: Infrastructure Specialist</div>
+                    
+                    <p><strong>[Context]</strong> Ontwerp, implementatie en beheer van veilige cloud-funderingen voor de Nederlandse overheid en gemeenten. Momenteel ligt de strategische focus op het ontwikkelen van "digitale soevereiniteit" als antwoord op wereldwijde geopolitieke ontwikkelingen en de afhankelijkheid van Big Tech.</p>
+                    
+                    <p><strong>[Architecture & Operations]</strong></p>
+                    <ul class="hacker-list" style="margin-bottom: 20px;">
+                        <li><strong>Government Cloud Infrastructure:</strong> Design en uitrol van veilige Azure-landing zones voor de publieke sector. De infrastructuur wordt volledig 'as-code' gedeployed via <span class="highlight">Bicep</span>. Hierbij staat compliance-by-design centraal, strikt ontworpen volgens het Microsoft Cloud Adoption Framework (CAF) en nationale overheidsrichtlijnen.</li>
+                        <li><strong>Proof of Concept: Sovereign Digital Workplace:</strong> Ontwikkeling van een strategisch, soeverein alternatief voor standaard Big Tech-werkplekken (zoals Microsoft 365). Dit initiatief faciliteert een onafhankelijke werkomgeving waar de overheid 100% eigenaarschap en controle over haar eigen data behoudt.</li>
+                        <li><strong>Nextcloud op Kubernetes (Ongoing):</strong> Leidende architectuurrol in de technische realisatie van deze PoC. Door <span class="highlight">Nextcloud</span> high-available te deployen op een robuust Kubernetes-fundament, wordt de schaalbaarheid van moderne cloud-native systemen gecombineerd met de strikte data-residency eisen van de EU.</li>
+                    </ul>
+                </div>
+
+                <div id="prorail" class="tab-content">
+                    <div class="prompt">cat prorail_aks.md</div>
+                    <h3 style="color: #fff; margin-bottom: 10px; margin-top: 20px;">ProRail: Enterprise AKS & Cloud Automation</h3>
+                    <div class="subtitle" style="font-size: 14px; margin-bottom: 20px;">Rol: Cloud Automation Engineer</div>
+                    
+                    <p><strong>[Context]</strong> Verantwoordelijk voor de operationele continuïteit, schaalbaarheid en modernisering van missiekritieke Azure Kubernetes Service (AKS) clusters. Deze clusters vormen het fundament voor essentiële Java-applicaties die de spoorweginfrastructuur ondersteunen.</p>
+                    
+                    <p><strong>[Architecture & Operations]</strong></p>
+                    <ul class="hacker-list" style="margin-bottom: 20px;">
+                        <li><strong>Platform Engineering & CI/CD:</strong> Geautomatiseerd beheer van core cluster-componenten, waaronder Keycloak (IAM) en RabbitMQ (messaging). Door pipelines in <span class="highlight">Jenkins</span> en Bitbucket te optimaliseren, werd het patch-management gestandaardiseerd en konden maandelijkse component-updates met zero-downtime worden uitgerold.</li>
+                        <li><strong>Observability & Ingress Migratie:</strong> Succesvolle uitvoering van een complexe architectuur-transitie ter verbetering van de cluster-prestaties. NGINX is gemigreerd naar <span class="highlight">Traefik</span> als moderne cloud-native API gateway. Daarnaast is de legacy ELK-stack vervangen door de efficiëntere <span class="highlight">LGTM-stack</span> (Grafana, Loki, Tempo, Mimir). Dit resulteerde in snellere query-tijden, geïntegreerde distributed tracing voor de Java-applicaties en een drastisch verlaagde resource-voetafdruk.</li>
+                        <li><strong>IaC & Security Hardening:</strong> Transformatie naar een strikt Infrastructure as Code model met <span class="highlight">Terraform</span>. Bijzondere focus op het reduceren van het aanvalsoppervlak door het Cloud Adoption Framework (CAF) toe te passen: permanente 'Global Owner/Contributor' rechten zijn geëlimineerd en vervangen door een fijnmazige 'Least Privilege' Role-Based Access Control (RBAC) architectuur.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                // Show the corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
