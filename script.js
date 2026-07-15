@@ -3,13 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
         once: false,
         mirror: true
     });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        once: false,
-        mirror: true
-    });
 
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -17,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
             mobileMenu.classList.toggle('is-active');
         });
 
@@ -27,4 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+});
+
+window.addEventListener('load', function() {
+    AOS.refresh();
 });
