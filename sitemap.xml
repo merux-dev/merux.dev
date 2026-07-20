@@ -71,7 +71,7 @@
   <!-- Helm Charts Subdomain -->
   <url>
     <loc>https://charts.merux.dev/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
