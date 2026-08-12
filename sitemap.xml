@@ -5,7 +5,7 @@
   <!-- Dutch Root (Main Language) -->
   <url>
     <loc>https://merux.dev/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/" />
@@ -16,7 +16,7 @@
   <!-- English Root -->
   <url>
     <loc>https://merux.dev/en/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/" />
@@ -24,10 +24,32 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/" />
   </url>
 
+  <!-- Dutch Nextcloud -->
+  <url>
+    <loc>https://merux.dev/nextcloud.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/nextcloud.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://merux.dev/en/nextcloud.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/nextcloud.html" />
+  </url>
+
+  <!-- English Nextcloud -->
+  <url>
+    <loc>https://merux.dev/en/nextcloud.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/nextcloud.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://merux.dev/en/nextcloud.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/nextcloud.html" />
+  </url>
+
   <!-- Dutch About Us -->
   <url>
     <loc>https://merux.dev/about.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/about.html" />
@@ -38,7 +60,7 @@
   <!-- English About Us -->
   <url>
     <loc>https://merux.dev/en/about.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/about.html" />
@@ -46,10 +68,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://merux.dev/about.html" />
   </url>
 
-    <!-- Dutch Projects -->
+  <!-- Dutch Projects -->
   <url>
     <loc>https://merux.dev/projects.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/projects.html" />
@@ -60,7 +82,7 @@
   <!-- English Projects -->
   <url>
     <loc>https://merux.dev/en/projects.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://merux.dev/projects.html" />
@@ -71,7 +93,7 @@
   <!-- Helm Charts Subdomain -->
   <url>
     <loc>https://charts.merux.dev/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <title>Enterprise Nextcloud Architecture | merux.dev</title>
+    <meta name="description" content="How I host Nextcloud on my own hardware with Kubernetes for full control over data and privacy.">
+    <meta name="keywords" content="merux, Nextcloud, Kubernetes, Proxmox, GitOps, Self-hosting, Data Sovereignty">
+    <meta name="author" content="merux.dev">
+    
+    <link rel="alternate" hreflang="nl" href="https://merux.dev/nextcloud.html" />
+    <link rel="alternate" hreflang="en" href="https://merux.dev/en/nextcloud.html" />
+    
+    <!-- Link points to the root style.css -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/en/index.html">
+                <span class="matrix-text">merux.dev</span>
+            </a>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/en/index.html#home">Home</a></li>
+            <li><a href="/en/index.html#nextcloud" class="active">Nextcloud</a></li>
+            <li><a href="/en/index.html#helm-charts">Helm Charts</a></li>
+            <li><a href="/en/index.html#projects">Projects</a></li>
+            <li><a href="/en/about.html">About Us</a></li>
+            <li class="lang-switch">
+                <a href="/nextcloud.html">NL</a> | <a href="/en/nextcloud.html" class="active">EN</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        
+        <header class="article-header">
+            <h1 class="matrix-text">Self-hosting Nextcloud: No Big Tech, but full control</h1>
+        </header>
+
+        <article class="article-content">
+            
+            <!-- SECTION 1: Introduction, Privacy, Own Hardware & Why Kubernetes -->
+            <h2>1. The need for digital sovereignty and the choice for Kubernetes</h2>
+            <p>Tech giants currently have a massive grip on our data and privacy. When using services from large cloud providers, it is often completely unclear where your data is physically stored, under which legal regime it falls, and who exactly has access to it. You hand over control completely.</p>
+            
+            <p>To take back that control, you can use <strong>Nextcloud</strong>. This is <em>the</em> open-source alternative that allows you to keep all your documents, files, and communication in your own hands. The major advantage: you can run this entirely on your own hardware, so you know exactly where your data resides.</p>
+
+            <p>Why choose <strong>Kubernetes</strong> in such a scenario instead of a simple Docker script on a single server? Because you quickly realize that a serious set of components (file storage, database, caching, security, monitoring) shouldn't rely on a single point of failure. Kubernetes provides automation at scale: it distributes the load, automatically heals itself if a component fails (self-healing), and makes it possible to manage modular services strictly separated from each other without downtime.</p>
+
+            <!-- SECTION 2: Modules -->
+            <h2>2. Active Nextcloud Modules</h2>
+            <p>In my setup, Nextcloud doesn't run as an isolated application, but is linked to several specialized modules to ensure functionality and security:</p>
+            
+            <ul class="hacker-list">
+                <li><strong>Nextcloud Files (Core):</strong> For personal and shared file storage with full control over versioning and synchronization.</li>
+                <li><strong>Nextcloud Talk + High Performance Backend (HPB):</strong> For secure chat and video conferencing, where the HPB ensures video streams are processed smoothly and separately from the web application.</li>
+                <li><strong>Keycloak (IdP):</strong> Acts as the central Identity Provider for secure authentication and access management (Single Sign-On).</li>
+                <li><strong>ClamAV:</strong> Runs in the background as an automated virus scanner for all uploaded files.</li>
+                <li><strong>Grafana, Loki & Uptime Kuma:</strong> Together form the observability stack to continuously monitor logs, metrics, and uptime.</li>
+            </ul>
+
+            <!-- SECTION 3: Architecture & Setup -->
+            <h2>3. Architecture and Infrastructure</h2>
+            <p>The underlying infrastructure runs on a Proxmox environment, where the Kubernetes cluster (managed via Rancher) is combined with dedicated virtual machines for specific tasks. Incoming internet traffic first passes through a strict firewall, after which MetalLB and Traefik securely route the traffic to the correct components within the cluster.</p>
+
+            <div class="mermaid-wrapper">
+                <div class="mermaid">
+                graph TD
+                    classDef external fill:#0d1117,stroke:#58a6ff,stroke-width:2px,stroke-dasharray: 5 5,color:#c9d1d9;
+                    classDef network fill:#0d1117,stroke:#00ff66,stroke-width:2px,color:#c9d1d9;
+                    classDef core fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#c9d1d9;
+                    classDef ops fill:#161b22,stroke:#ff69b4,stroke-width:2px,color:#c9d1d9;
+                    classDef api fill:#0d1117,stroke:#8e44ad,stroke-width:2px,color:#c9d1d9;
+
+                    Internet((Internet))
+
+                    subgraph Proxmox ["Proxmox Virtualization"]
+                        subgraph Rancher Cluster ["Rancher Kubernetes Cluster"]
+                            K8sAPI{{Kubernetes API}}:::api
+
+                            subgraph Netwerk & Ingress
+                                MLB[MetalLB Load Balancer]:::network
+                                Traefik[Traefik Ingress]:::network
+                                CM[Cert-Manager]:::network
+                            end
+
+                            subgraph Core Applicaties
+                                KC[Keycloak IdP]:::core
+                                NC[Nextcloud Enterprise]:::core
+                                NCT[Nextcloud Talk + HPB]:::core
+                                AV[ClamAV]:::core
+                            end
+
+                            subgraph GitOps & Observability
+                                Argo[ArgoCD]:::ops
+                                Mon[Grafana, Loki, Kuma]:::ops
+                            end
+                        end
+
+                        subgraph VMs ["Dedicated VMs"]
+                            DB[(MariaDB)]:::external
+                            Git[Bitbucket]:::external
+                            FW[Firewall]:::external
+                        end
+                    end
+
+                    Internet -->|HTTPS| FW
+                    FW --> MLB
+                    MLB --> Traefik
+                    CM -.->|Auto SSL| Traefik
+                    
+                    Traefik --> NC
+                    Traefik --> NCT
+                    Traefik --> KC
+                    
+                    NC -->|Authentication| KC
+                    NC -->|Read/Write| DB
+                    NC -->|Scan uploads| AV
+                    
+                    Argo -.->|Pull Config| Git
+                    Argo ==>|Sync State| K8sAPI
+                    
+                    Mon -.->|Log/Metrics| K8sAPI
+                </div>
+            </div>
+
+            <!-- SECTION 4: Design Choices -->
+            <h2>4. Design choices and motivation</h2>
+            <p>Conscious architectural choices were made when setting up this environment:</p>
+
+            <h3>The database outside the cluster</h3>
+            <p>Although Kubernetes is flexible, I chose to run the MariaDB database on a dedicated virtual machine instead of inside the cluster. This makes managing stateful data much more reliable. At the hypervisor level (Proxmox), this allows me to easily create and restore snapshots and backups, completely shielded behind the firewall.</p>
+
+            <h3>Automated management via GitOps</h3>
+            <p>Nothing is manually configured on the production systems. The complete configuration is defined as code in a private Bitbucket repository. ArgoCD reads this repository and automatically synchronizes the actual state of the cluster with the desired state. This guarantees reproducibility and prevents human errors.</p>
+
+            <h3>Security and network control</h3>
+            <p>By using Cert-Manager for automatic SSL certificates, Traefik as an Ingress controller, and a strict separation of network components, the environment is optimally secured against unauthorized outside access, without compromising performance.</p>
+
+        </article>
+
+    </main>
+
+    <script src="/script.js"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: "dark",
+            themeVariables: {
+                fontFamily: 'monospace'
+            }
+        });
+    </script>
+</body>
+</html>
