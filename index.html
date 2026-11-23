@@ -1,98 +1,1295 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en" class="dark scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    
-    <title>merux.dev | Sovereign Cloud Systems & Nextcloud</title>
-    <meta name="description" content="merux.dev bouwt enterprise-grade, on-premise en cloud native oplossingen om de afhankelijkheid van Big Tech te minimaliseren met Nextcloud en Kubernetes.">
-    <meta name="keywords" content="merux, merux dev, Nextcloud, Kubernetes, Sovereign Cloud, Cloud Native, Helm Charts">
-    <meta name="author" content="merux.dev">
-    
-    <meta property="og:title" content="merux.dev | Cloud Native Oplossingen">
-    <meta property="og:description" content="Terug naar digitale soevereiniteit. Wij bouwen enterprise-grade cloud native oplossingen.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://merux.dev/">
-    
-    <link rel="alternate" hreflang="nl" href="https://merux.dev/" />
-    <link rel="alternate" hreflang="en" href="https://merux.dev/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://merux.dev/" />
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title id="meta-title">merux.dev | Sovereign Cloud Systems, Kubernetes & Enterprise Nextcloud</title>
+  <meta
+    id="meta-description"
+    name="description"
+    content="Job (merux.dev) - Cloud Native Engineer & Kubernetes Engineer specializing in EU Digital Sovereignty, Enterprise Nextcloud on Kubernetes, Azure AKS, GitOps, and LGTM Observability. Available for advisory and implementation."
+  />
+  <meta
+    name="keywords"
+    content="Sovereign Cloud, Nextcloud Kubernetes, Digital Sovereignty, Digitale Soevereiniteit, Azure AKS, Kubernetes Architect, Proxmox, Rancher, ArgoCD, GitOps, Helm Charts, Nextcloud Talk HPB, Keycloak SSO, Traefik, LGTM Stack, Cloud Native Engineer Netherlands"
+  />
+  <meta name="author" content="Job - merux.dev" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://merux.dev/" />
+
+  <!-- Multilingual / Alternate Hreflang Hints -->
+  <link rel="alternate" hreflang="en" href="https://merux.dev/?lang=en" />
+  <link rel="alternate" hreflang="nl" href="https://merux.dev/?lang=nl" />
+  <link rel="alternate" hreflang="x-default" href="https://merux.dev/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="merux.dev" />
+  <meta property="og:url" content="https://merux.dev/" />
+  <meta id="og-title" property="og:title" content="merux.dev | Sovereign Cloud Systems & Enterprise Nextcloud" />
+  <meta
+    id="og-description"
+    property="og:description"
+    content="Enterprise-grade on-premise and cloud-native architectures for EU digital sovereignty. Explore production Nextcloud on Kubernetes blueprints, AKS case studies, and open-source Helm charts."
+  />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="merux.dev | Sovereign Cloud Systems & Kubernetes Architect" />
+  <meta
+    name="twitter:description"
+    content="Building EU-sovereign Nextcloud & Kubernetes platforms, open-source Helm charts, and mission-critical cloud automation."
+  />
+
+  <!-- Inline SVG Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="favicon.svg"
+  />
+
+  <!-- Structured Data (JSON-LD) for Maximum Search Engine & AI Discovery -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://merux.dev/#website",
+        "url": "https://merux.dev/",
+        "name": "merux.dev - Sovereign Cloud Systems & Nextcloud",
+        "inLanguage": ["en", "nl"],
+        "publisher": { "@id": "https://merux.dev/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://merux.dev/#person",
+        "name": "Job",
+        "alternateName": "merux",
+        "url": "https://merux.dev/",
+        "email": "mailto:info@merux.dev",
+        "jobTitle": "Cloud Native Engineer & Kubernetes Engineer",
+        "knowsAbout": [
+          "Kubernetes",
+          "Azure Kubernetes Service (AKS)",
+          "Nextcloud Enterprise Architecture",
+          "Digital Sovereignty",
+          "Proxmox Virtualization",
+          "Rancher",
+          "Terraform",
+          "Azure Bicep",
+          "ArgoCD GitOps",
+          "Traefik",
+          "Keycloak IAM",
+          "Grafana Loki Tempo Mimir (LGTM)",
+          "Helm Charts"
+        ],
+        "sameAs": [
+          "https://github.com/Job-IDev",
+          "https://charts.merux.dev"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://merux.dev/#service",
+        "name": "merux.dev Sovereign Cloud & Kubernetes Consulting",
+        "url": "https://merux.dev/#services",
+        "provider": { "@id": "https://merux.dev/#person" },
+        "areaServed": ["NL", "EU"],
+        "description": "Architecture, implementation, and optimization of EU-sovereign Nextcloud platforms, Kubernetes/AKS clusters, GitOps pipelines, and LGTM observability stacks.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cloud Native & Sovereign Infrastructure Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sovereign Nextcloud & Digital Workplace Implementation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Enterprise Kubernetes (AKS / Rancher) Platform Engineering"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Observability (LGTM) & GitOps Transformation"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://charts.merux.dev/#helm",
+        "name": "Merux Open Source Helm Charts",
+        "codeRepository": "https://github.com/Job-IDev",
+        "url": "https://charts.merux.dev",
+        "programmingLanguage": ["YAML", "Helm", "Kubernetes"],
+        "author": { "@id": "https://merux.dev/#person" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+          },
+          colors: {
+            obsidian: '#060A12',
+            surface: '#0C1322',
+            elevated: '#111B2E',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/index.html">
-                <span class="matrix-text">merux.dev</span>
+<body class="bg-slate-50 text-slate-900 dark:bg-obsidian dark:text-slate-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+
+  <!-- Toast Notification Container (Replaces alert() cleanly) -->
+  <div
+    id="toast-container"
+    aria-live="polite"
+    class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-sm w-full px-4 sm:px-0"
+  ></div>
+
+  <!-- Top Sticky Navigation -->
+  <header class="sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-obsidian/85 backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Brand Logo -->
+        <a href="#top" class="flex items-center gap-3 group focus:outline-none">
+          <span class="brand-prefix">&gt;_</span>
+          <div class="flex flex-col">
+            <span class="font-mono font-bold text-base tracking-tight text-slate-900 dark:text-white">
+              merux<span class="text-emerald-500">.dev</span>
+            </span>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 hidden sm:inline">
+              Sovereign Cloud
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#services" data-i18n="nav_services" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Solutions &amp; Services</a>
+          <a href="#nextcloud" data-i18n="nav_nextcloud" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Nextcloud Architecture</a>
+          <a href="#projects" data-i18n="nav_projects" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Enterprise Portfolio</a>
+          <a href="#charts" data-i18n="nav_charts" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Helm Charts</a>
+          <a href="#about" data-i18n="nav_about" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About &amp; Stack</a>
+        </nav>
+
+        <!-- Right Controls: Language Switcher, Theme Toggle, Primary CTA -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Language Toggle (NL / EN) -->
+          <div
+            role="group"
+            aria-label="Language Switcher"
+            class="inline-flex rounded-xl p-1 bg-slate-100 dark:bg-surface border border-slate-200 dark:border-slate-800 font-mono text-xs"
+          >
+            <button
+              type="button"
+              id="btn-lang-en"
+              onclick="setLanguage('en')"
+              class="px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              id="btn-lang-nl"
+              onclick="setLanguage('nl')"
+              class="px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer"
+            >
+              NL
+            </button>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            type="button"
+            id="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle color theme"
+            class="p-2.5 rounded-xl bg-slate-100 dark:bg-surface border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-emerald-500/50 transition-colors cursor-pointer"
+          >
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg id="icon-sun" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg id="icon-moon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+
+          <!-- Hire / Collaborate CTA -->
+          <a
+            href="#contact"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm shadow-sm shadow-emerald-950/30 transition-all"
+          >
+            <span class="w-2 h-2 rounded-full bg-emerald-200 animate-pulse"></span>
+            <span data-i18n="nav_cta">Work With Me</span>
+          </a>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            onclick="toggleMobileMenu()"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+            class="lg:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-surface border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 cursor-pointer"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden pb-4 pt-2 border-t border-slate-200 dark:border-slate-800">
+        <nav class="flex flex-col gap-1.5 text-sm font-medium">
+          <a href="#services" onclick="closeMobileMenu()" data-i18n="nav_services" class="px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-surface">Solutions &amp; Services</a>
+          <a href="#nextcloud" onclick="closeMobileMenu()" data-i18n="nav_nextcloud" class="px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-surface">Nextcloud Architecture</a>
+          <a href="#projects" onclick="closeMobileMenu()" data-i18n="nav_projects" class="px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-surface">Enterprise Portfolio</a>
+          <a href="#charts" onclick="closeMobileMenu()" data-i18n="nav_charts" class="px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-surface">Helm Charts</a>
+          <a href="#about" onclick="closeMobileMenu()" data-i18n="nav_about" class="px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-surface">About &amp; Stack</a>
+          <a href="#contact" onclick="closeMobileMenu()" class="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 text-white font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-200 animate-pulse"></span>
+            <span data-i18n="nav_cta">Work With Me</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="relative bg-grid-pattern border-b border-slate-200/80 dark:border-slate-800/80 overflow-hidden">
+      <!-- Ambient Decorative Glows -->
+      <div aria-hidden="true" class="pointer-events-none absolute -top-28 left-1/2 -translate-x-1/2 w-[42rem] h-[20rem] rounded-full bg-emerald-500/10 blur-3xl"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute top-40 right-0 w-[26rem] h-[18rem] rounded-full bg-sky-500/10 blur-3xl"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24">
+        <div class="max-w-4xl">
+          <!-- Availability Banner Badge -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-medium mb-6">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span data-i18n="hero_badge">Open to Sovereign Cloud &amp; Kubernetes Opportunities - Advisory, Interim &amp; Implementation</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1
+            data-i18n="hero_title"
+            class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]"
+          >
+            Digital Sovereignty, Engineered for Production.
+          </h1>
+
+          <!-- Subtitle bridging Organizations & Self-Hosters -->
+          <p
+            data-i18n="hero_subtitle"
+            class="mt-6 text-base sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl"
+          >
+            I help organizations, public-sector teams, and self-hosting engineers replace Big Tech lock-in with resilient, EU-compliant infrastructure. From high-availability Nextcloud on Kubernetes to mission-critical Azure AKS automation.
+          </p>
+
+          <!-- Primary Action Buttons -->
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-emerald-950/25 transition-all"
+            >
+              <span data-i18n="hero_cta_primary">Discuss an Implementation or Role</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </a>
-        </div>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <a
+              href="#nextcloud"
+              class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-white dark:bg-surface hover:bg-slate-100 dark:hover:bg-elevated text-slate-900 dark:text-slate-100 border border-slate-300 dark:border-slate-700 font-semibold text-sm sm:text-base transition-all"
+            >
+              <span data-i18n="hero_cta_secondary">Explore Nextcloud Architecture</span>
+            </a>
+            <a
+              href="https://charts.merux.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 dark:bg-slate-900/90 hover:bg-slate-800 text-sky-400 border border-slate-700/80 font-mono text-xs sm:text-sm transition-all"
+            >
+              <span>helm repo add merux</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="/index.html#home">Home</a></li>
-            <li><a href="/index.html#nextcloud">Nextcloud</a></li>
-            <li><a href="/index.html#helm-charts">Helm Charts</a></li>
-            <li><a href="/index.html#projects">Projecten</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li class="lang-switch">
-                <a href="/" class="active">NL</a> | <a href="/en/">EN</a>
-            </li>
-        </ul>
-    </nav>
-
-    <section id="home" class="section-full">
-        <div class="content-box">
-            <h1 class="matrix-text">Sovereign Cloud Systems</h1>
-            <p>Terug naar digitale soevereiniteit. Wij bouwen enterprise-grade, on-premise en cloud native oplossingen om de afhankelijkheid van Big Tech te minimaliseren.</p>
-            <p class="blink">_</p>
-        </div>
-    </section>
-
-    <section id="nextcloud" class="section-full">
-        <div class="content-box" data-aos="fade-right" data-aos-duration="1000">
-            <h2>>_ Enterprise Nextcloud Hosting</h2>
-            <p>Datasoevereiniteit is niet zomaar een idee, het is een architectuur. Ontdek hoe ik Nextcloud host op eigen hardware met behulp van Kubernetes, Proxmox en GitOps om de volledige controle over je privacy en data te behouden.</p>
-            <div class="links" style="margin-top: 20px;">
-                <a href="/nextcloud.html" class="link-btn">Bekijk architectuur</a>
+        <!-- Dual Audience Path Cards (Companies vs. Engineers/Hobbyists) -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Audience 1: Organizations & Decision Makers -->
+          <div class="rounded-2xl p-6 bg-white/90 dark:bg-surface/90 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 transition-all shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-semibold">
+                FOR COMPANIES &amp; PUBLIC SECTOR
+              </span>
+              <span class="text-xs font-mono text-slate-400">NIS2 / GDPR / EU</span>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section-full">
-        <div class="content-box" data-aos="fade-left" data-aos-duration="1000">
-            <h2>>_ Portfolio: Enterprise Cloud Native</h2>
-            <p>Van het garanderen van de stabiliteit van missiekritieke AKS-clusters bij ProRail tot Sovereign Cloud oplossingen bij Centric. Ik ontwerp, beveilig en automatiseer complexe cloud native architecturen voor de publieke sector en enterprise omgevingen.</p>
-            <ul class="hacker-list">
-                <li>Enterprise Kubernetes (AKS) Operations</li>
-                <li>Sovereign Cloud & Data Residency</li>
-                <li>Advanced Observability (LGTM) & IaC</li>
-            </ul>
-            <div class="links" style="margin-top: 20px;">
-                <a href="/projects.html" class="link-btn">Bekijk projecten</a>
+            <h2 data-i18n="aud_org_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              Adopt Sovereign Cloud Without Operational Risk
+            </h2>
+            <p data-i18n="aud_org_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Looking to reduce Microsoft 365 / Big Tech dependency, harden Azure AKS clusters, or deploy an EU-hosted Nextcloud workplace? I bring hands-on public-sector and railway-grade engineering directly to your team.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-3 text-xs font-semibold">
+              <a href="#services" data-i18n="aud_org_link1" class="text-emerald-600 dark:text-emerald-400 hover:underline">View Implementation Services &rarr;</a>
+              <a href="#projects" data-i18n="aud_org_link2" class="text-slate-600 dark:text-slate-300 hover:underline">Centric &amp; ProRail Track Record &rarr;</a>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <section id="helm-charts" class="section-full">
-        <div class="content-box" data-aos="fade-up" data-aos-duration="1000">
-            <h2>>_ Open Source Helm Charts</h2>
-            <p>Infrastructure as Code is de standaard. Ontdek onze public Helm chart repository voor gestandaardiseerde, veilige en direct inzetbare applicatie-configuraties.</p>
-            <div class="links" style="margin-top: 20px;">
-                <a href="https://charts.merux.dev" target="_blank" class="link-btn">Bekijk charts.merux.dev</a>
+          <!-- Audience 2: Hobbyists & Self-Hosters -->
+          <div class="rounded-2xl p-6 bg-white/90 dark:bg-surface/90 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition-all shadow-sm">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-500/10 text-sky-700 dark:text-sky-400 font-mono text-xs font-semibold">
+                FOR SELF-HOSTERS &amp; ENGINEERS
+              </span>
+              <span class="text-xs font-mono text-slate-400">K8s / Proxmox / Helm</span>
             </div>
+            <h2 data-i18n="aud_dev_title" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              Production Blueprints &amp; Open-Source Helm Charts
+            </h2>
+            <p data-i18n="aud_dev_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Running Nextcloud beyond a single Docker Compose file? Inspect my full Proxmox + Rancher Kubernetes topology, Talk High Performance Backend (HPB) setup, GitOps workflows, and ready-to-use Helm charts.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-3 text-xs font-semibold">
+              <a href="#nextcloud" data-i18n="aud_dev_link1" class="text-sky-600 dark:text-sky-400 hover:underline">Interactive Topology &amp; Design Choices &rarr;</a>
+              <a href="#charts" data-i18n="aud_dev_link2" class="text-slate-600 dark:text-slate-300 hover:underline">Install Merux Helm Charts &rarr;</a>
+            </div>
+          </div>
         </div>
+
+        <!-- Credibility Stats Strip -->
+        <dl class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="rounded-2xl p-4 sm:p-5 bg-white/75 dark:bg-surface/75 border border-slate-200/80 dark:border-slate-800/80">
+            <dt data-i18n="stat_k8s_label" class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Kubernetes &amp; Rancher</dt>
+            <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">3+ <span data-i18n="stat_years" class="text-base font-semibold text-emerald-500">Years</span></dd>
+          </div>
+          <div class="rounded-2xl p-4 sm:p-5 bg-white/75 dark:bg-surface/75 border border-slate-200/80 dark:border-slate-800/80">
+            <dt data-i18n="stat_azure_label" class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Microsoft Azure &amp; IaC</dt>
+            <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">4+ <span data-i18n="stat_years" class="text-base font-semibold text-sky-400">Years</span></dd>
+          </div>
+          <div class="rounded-2xl p-4 sm:p-5 bg-white/75 dark:bg-surface/75 border border-slate-200/80 dark:border-slate-800/80">
+            <dt data-i18n="stat_obs_label" class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Logging &amp; Observability</dt>
+            <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">5+ <span data-i18n="stat_years" class="text-base font-semibold text-emerald-500">Years</span></dd>
+          </div>
+          <div class="rounded-2xl p-4 sm:p-5 bg-white/75 dark:bg-surface/75 border border-slate-200/80 dark:border-slate-800/80">
+            <dt data-i18n="stat_sov_label" class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Data Residency Focus</dt>
+            <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">100% <span class="text-base font-semibold text-sky-400">EU</span></dd>
+          </div>
+        </dl>
+      </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/script.js"></script> 
+    <!-- SOLUTIONS & SERVICES SECTION (Built for Advertising & Client Engagement) -->
+    <section id="services" class="py-16 sm:py-24 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            // SOLUTIONS &amp; ENGAGEMENT
+          </span>
+          <h2 data-i18n="srv_heading" class="mt-2 text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            How We Can Work Together
+          </h2>
+          <p data-i18n="srv_subheading" class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+            Whether your organization is launching a sovereign digital workplace, modernizing Kubernetes operations, or seeking an experienced Cloud Native Engineer, I deliver pragmatic, code-driven results.
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Service Card 1 -->
+          <article class="rounded-2xl p-6 sm:p-7 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 mb-5">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <h3 data-i18n="srv1_title" class="text-xl font-bold text-slate-900 dark:text-white">
+                Sovereign Nextcloud &amp; Digital Workplace
+              </h3>
+              <p data-i18n="srv1_desc" class="mt-2.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                End-to-end architecture and deployment of Nextcloud Enterprise/Hub on Kubernetes or hybrid infrastructure. Includes Nextcloud Talk + High Performance Backend (HPB), Keycloak SSO, ClamAV malware scanning, and strict EU data residency.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Nextcloud HA</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Talk + HPB</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Keycloak OIDC</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">GDPR / NIS2</span>
+            </div>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="rounded-2xl p-6 sm:p-7 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <h3 data-i18n="srv2_title" class="text-xl font-bold text-slate-900 dark:text-white">
+                Kubernetes &amp; Azure (AKS) Platform Engineering
+              </h3>
+              <p data-i18n="srv2_desc" class="mt-2.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                Production cluster design, multi-cluster Rancher governance, Ingress modernization (NGINX to Traefik), zero-downtime release pipelines, and Cloud Adoption Framework (CAF) Least-Privilege RBAC security hardening.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Azure AKS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Rancher K8s</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Traefik Gateway</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">CAF RBAC</span>
+            </div>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="rounded-2xl p-6 sm:p-7 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-5">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 data-i18n="srv3_title" class="text-xl font-bold text-slate-900 dark:text-white">
+                Observability (LGTM) &amp; GitOps Automation
+              </h3>
+              <p data-i18n="srv3_desc" class="mt-2.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                Cut infrastructure overhead and accelerate root-cause analysis by migrating legacy ELK stacks to Grafana, Loki, Tempo, and Mimir-paired with reproducible Infrastructure as Code (Terraform, Bicep, ArgoCD).
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Grafana LGTM</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">ArgoCD</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Terraform</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Azure Bicep</span>
+            </div>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="rounded-2xl p-6 sm:p-7 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-5">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 data-i18n="srv4_title" class="text-xl font-bold text-slate-900 dark:text-white">
+                Architecture Audits &amp; Self-Hosting Advisory
+              </h3>
+              <p data-i18n="srv4_desc" class="mt-2.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                Dedicated architectural reviews, custom Helm chart development, and migration roadmaps for IT teams or advanced self-hosters transitioning from single-server Docker setups to resilient clusters.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Custom Helm</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Proxmox VE</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Security Audits</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-elevated">Sparring</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE NEXTCLOUD ARCHITECTURE SECTION -->
+    <section id="nextcloud" class="py-16 sm:py-24 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-100/60 dark:bg-surface/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="max-w-3xl">
+            <span class="font-mono text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+              // REFERENCE ARCHITECTURE
+            </span>
+            <h2 data-i18n="nc_heading" class="mt-2 text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Self-Hosting Nextcloud: No Big Tech, Full Control
+            </h2>
+            <p data-i18n="nc_subheading" class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+              When relying on hyperscale cloud suites, physical data location and legal jurisdiction are out of your hands. Click any component in the live topology below to inspect how I run Nextcloud in production on Proxmox &amp; Kubernetes.
+            </p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-600 dark:text-slate-300 self-start">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <span data-i18n="nc_hint">Interactive Diagram: Click any node</span>
+          </div>
+        </div>
+
+        <!-- Interactive Architecture Topology + Live Node Inspector -->
+        <div class="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <!-- Interactive SVG Topology Canvas (7 cols on lg) -->
+          <div class="lg:col-span-7 rounded-2xl p-4 sm:p-6 bg-[#080D19] border border-slate-800 shadow-xl overflow-hidden">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800/90">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 font-mono text-xs text-slate-400">proxmox-sovereign-cluster.svg</span>
+              </div>
+              <span class="font-mono text-[11px] text-emerald-400">GitOps Synced</span>
+            </div>
+
+            <div class="w-full overflow-x-auto">
+              <svg
+                viewBox="0 0 760 510"
+                class="w-full h-auto min-w-[540px] select-none"
+                role="img"
+                aria-label="Interactive Sovereign Nextcloud on Proxmox and Kubernetes Architecture Diagram"
+              >
+                <!-- Outer Proxmox Host Boundary -->
+                <rect x="14" y="14" width="732" height="482" rx="16" fill="#0B1221" stroke="#1E293B" stroke-width="1.5" />
+                <text x="30" y="38" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">
+                  PROXMOX VE HYPERVISOR (EU SOVEREIGN HARDWARE)
+                </text>
+
+                <!-- Rancher Kubernetes Cluster Boundary -->
+                <rect x="30" y="54" width="490" height="426" rx="14" fill="#0F172A" stroke="#0EA5E9" stroke-opacity="0.4" stroke-width="1.5" />
+                <text x="46" y="77" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">
+                  RANCHER KUBERNETES CLUSTER
+                </text>
+
+                <!-- Dedicated VMs Boundary -->
+                <rect x="536" y="54" width="194" height="426" rx="14" fill="#0F172A" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.5" />
+                <text x="552" y="77" fill="#FBBF24" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">
+                  DEDICATED VMs
+                </text>
+
+                <!-- Animated Traffic / Data Connections -->
+                <!-- Firewall -> MetalLB / Traefik -->
+                <line x1="552" y1="125" x2="355" y2="125" stroke="#10B981" stroke-width="2" class="traffic-flow" />
+                <!-- Traefik -> Nextcloud Core -->
+                <line x1="250" y1="154" x2="155" y2="210" stroke="#38BDF8" stroke-width="1.8" class="traffic-flow" />
+                <!-- Traefik -> Talk HPB -->
+                <line x1="275" y1="154" x2="365" y2="210" stroke="#38BDF8" stroke-width="1.8" class="traffic-flow" />
+                <!-- Nextcloud -> Keycloak -->
+                <line x1="155" y1="268" x2="155" y2="314" stroke="#A78BFA" stroke-width="1.8" />
+                <!-- Nextcloud -> ClamAV -->
+                <line x1="230" y1="240" x2="292" y2="338" stroke="#F43F5E" stroke-width="1.5" stroke-dasharray="4 4" />
+                <!-- Nextcloud -> MariaDB VM -->
+                <line x1="230" y1="235" x2="552" y2="235" stroke="#F59E0B" stroke-width="2" class="traffic-flow" />
+                <!-- Bitbucket -> ArgoCD -->
+                <line x1="552" y1="348" x2="495" y2="420" stroke="#EC4899" stroke-width="1.8" stroke-dasharray="4 4" />
+
+                <!-- NODE 1: Edge Firewall -->
+                <g class="arch-node" data-node="firewall" onclick="selectArchNode('firewall')">
+                  <rect class="node-box" x="552" y="96" width="162" height="58" rx="10" fill="#131C31" stroke="#10B981" stroke-width="1.6" />
+                  <text x="633" y="121" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Strict Edge Firewall</text>
+                  <text x="633" y="139" text-anchor="middle" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="10">Ingress Filtering &amp; NAT</text>
+                </g>
+
+                <!-- NODE 2: MetalLB & Traefik + Cert-Manager -->
+                <g class="arch-node active-node" data-node="ingress" onclick="selectArchNode('ingress')">
+                  <rect class="node-box" x="150" y="96" width="230" height="58" rx="10" fill="#131C31" stroke="#38BDF8" stroke-width="1.8" />
+                  <text x="265" y="121" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">MetalLB + Traefik Ingress</text>
+                  <text x="265" y="139" text-anchor="middle" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="10">Cert-Manager Auto-TLS</text>
+                </g>
+
+                <!-- NODE 3: Nextcloud Core -->
+                <g class="arch-node" data-node="nextcloud" onclick="selectArchNode('nextcloud')">
+                  <rect class="node-box" x="52" y="210" width="178" height="58" rx="10" fill="#131C31" stroke="#38BDF8" stroke-width="1.6" />
+                  <text x="141" y="235" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Nextcloud Enterprise</text>
+                  <text x="141" y="253" text-anchor="middle" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10">Files, Sync &amp; Collaboration</text>
+                </g>
+
+                <!-- NODE 4: Nextcloud Talk + HPB -->
+                <g class="arch-node" data-node="talk" onclick="selectArchNode('talk')">
+                  <rect class="node-box" x="285" y="210" width="210" height="58" rx="10" fill="#131C31" stroke="#38BDF8" stroke-width="1.6" />
+                  <text x="390" y="235" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Nextcloud Talk + HPB</text>
+                  <text x="390" y="253" text-anchor="middle" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="10">Spreed Signaling &amp; WebRTC</text>
+                </g>
+
+                <!-- NODE 5: Keycloak IdP -->
+                <g class="arch-node" data-node="keycloak" onclick="selectArchNode('keycloak')">
+                  <rect class="node-box" x="52" y="314" width="178" height="56" rx="10" fill="#131C31" stroke="#A78BFA" stroke-width="1.6" />
+                  <text x="141" y="338" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Keycloak IdP (SSO)</text>
+                  <text x="141" y="355" text-anchor="middle" fill="#C4B5FD" font-family="JetBrains Mono, monospace" font-size="10">OIDC / SAML Central Auth</text>
+                </g>
+
+                <!-- NODE 6: ClamAV Scanner -->
+                <g class="arch-node" data-node="clamav" onclick="selectArchNode('clamav')">
+                  <rect class="node-box" x="285" y="314" width="210" height="56" rx="10" fill="#131C31" stroke="#F43F5E" stroke-width="1.6" />
+                  <text x="390" y="338" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">ClamAV Daemon</text>
+                  <text x="390" y="355" text-anchor="middle" fill="#FDA4AF" font-family="JetBrains Mono, monospace" font-size="10">Automated Upload Scanning</text>
+                </g>
+
+                <!-- NODE 7: Observability Stack -->
+                <g class="arch-node" data-node="observability" onclick="selectArchNode('observability')">
+                  <rect class="node-box" x="52" y="396" width="215" height="62" rx="10" fill="#131C31" stroke="#10B981" stroke-width="1.6" />
+                  <text x="159" y="422" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Grafana, Loki &amp; Kuma</text>
+                  <text x="159" y="440" text-anchor="middle" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="10">Metrics, Logs &amp; Uptime</text>
+                </g>
+
+                <!-- NODE 8: ArgoCD GitOps -->
+                <g class="arch-node" data-node="gitops" onclick="selectArchNode('gitops')">
+                  <rect class="node-box" x="285" y="396" width="210" height="62" rx="10" fill="#131C31" stroke="#EC4899" stroke-width="1.6" />
+                  <text x="390" y="422" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">ArgoCD GitOps Engine</text>
+                  <text x="390" y="440" text-anchor="middle" fill="#F472B6" font-family="JetBrains Mono, monospace" font-size="10">Declarative State Sync</text>
+                </g>
+
+                <!-- NODE 9: Dedicated MariaDB VM -->
+                <g class="arch-node" data-node="mariadb" onclick="selectArchNode('mariadb')">
+                  <rect class="node-box" x="552" y="206" width="162" height="64" rx="10" fill="#131C31" stroke="#F59E0B" stroke-width="1.8" />
+                  <text x="633" y="232" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Dedicated MariaDB</text>
+                  <text x="633" y="250" text-anchor="middle" fill="#FBBF24" font-family="JetBrains Mono, monospace" font-size="10">Proxmox Snapshots &amp; HA</text>
+                </g>
+
+                <!-- NODE 10: Private Bitbucket Git -->
+                <g class="arch-node" data-node="gitops" onclick="selectArchNode('gitops')">
+                  <rect class="node-box" x="552" y="318" width="162" height="62" rx="10" fill="#131C31" stroke="#EC4899" stroke-width="1.6" />
+                  <text x="633" y="344" text-anchor="middle" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700">Private Bitbucket</text>
+                  <text x="633" y="362" text-anchor="middle" fill="#F472B6" font-family="JetBrains Mono, monospace" font-size="10">Single Source of Truth</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Live Node Inspector Panel (5 cols on lg) -->
+          <aside class="lg:col-span-5 rounded-2xl p-6 sm:p-7 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 shadow-lg">
+            <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-100 dark:border-slate-800">
+              <span class="font-mono text-xs uppercase tracking-wider text-sky-600 dark:text-sky-400 font-semibold">
+                COMPONENT INSPECTOR
+              </span>
+              <span id="inspector-badge" class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-300 font-mono text-xs">
+                Networking &amp; TLS
+              </span>
+            </div>
+
+            <h3 id="inspector-title" class="mt-4 text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+              MetalLB + Traefik Ingress &amp; Cert-Manager
+            </h3>
+            <p id="inspector-desc" class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              MetalLB provides bare-metal LoadBalancer IPs inside the Proxmox cluster, handing traffic off to Traefik as a cloud-native reverse proxy. Cert-Manager automates Let's Encrypt TLS certificates with zero manual renewal overhead.
+            </p>
+
+            <div class="mt-5 space-y-3">
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-200/70 dark:border-slate-700/70">
+                <div class="font-mono text-[11px] uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
+                  Enterprise &amp; Security Value
+                </div>
+                <p id="inspector-enterprise" class="mt-1 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                  Enforces strict TLS termination, security headers, and isolated routing rules across Nextcloud, Talk HPB, and Keycloak.
+                </p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-200/70 dark:border-slate-700/70">
+                <div class="font-mono text-[11px] uppercase tracking-wider text-amber-600 dark:text-amber-400 font-semibold">
+                  Self-Hoster / Architect Note
+                </div>
+                <p id="inspector-tip" class="mt-1 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                  Using Traefik IngressRoutes makes sticky sessions and WebSocket upgrades for Nextcloud Talk reliable out of the box.
+                </p>
+              </div>
+            </div>
+
+            <!-- Quick Node Selector Pills for Mobile Accessibility -->
+            <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div class="text-xs font-mono text-slate-400 mb-2.5">Quick jump components:</div>
+              <div class="flex flex-wrap gap-1.5">
+                <button type="button" onclick="selectArchNode('ingress')" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 dark:bg-elevated hover:border-sky-400 border border-transparent cursor-pointer">Traefik</button>
+                <button type="button" onclick="selectArchNode('nextcloud')" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 dark:bg-elevated hover:border-sky-400 border border-transparent cursor-pointer">Nextcloud</button>
+                <button type="button" onclick="selectArchNode('talk')" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 dark:bg-elevated hover:border-sky-400 border border-transparent cursor-pointer">Talk + HPB</button>
+                <button type="button" onclick="selectArchNode('mariadb')" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 dark:bg-elevated hover:border-amber-400 border border-transparent cursor-pointer">MariaDB VM</button>
+                <button type="button" onclick="selectArchNode('keycloak')" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 dark:bg-elevated hover:border-purple-400 border border-transparent cursor-pointer">Keycloak</button>
+                <button type="button" onclick="selectArchNode('gitops')" class="px-2.5 py-1.5 rounded-lg text-xs font-mono bg-slate-100 dark:bg-elevated hover:border-pink-400 border border-transparent cursor-pointer">ArgoCD</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- 4 Core Architectural Decisions -->
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="rounded-2xl p-5 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800">
+            <span class="font-mono text-xs font-bold text-sky-500">01 // ORCHESTRATION</span>
+            <h3 data-i18n="dec1_title" class="mt-2 font-bold text-base text-slate-900 dark:text-white">
+              Why Kubernetes Over Single-Host Docker?
+            </h3>
+            <p data-i18n="dec1_desc" class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              A serious collaboration platform (storage, caching, signaling, AV, IAM) cannot rely on a single point of failure. Kubernetes delivers self-healing, modular isolation, and rolling updates without downtime.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-5 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800">
+            <span class="font-mono text-xs font-bold text-amber-500">02 // STATEFUL SAFETY</span>
+            <h3 data-i18n="dec2_title" class="mt-2 font-bold text-base text-slate-900 dark:text-white">
+              Database Outside the Cluster
+            </h3>
+            <p data-i18n="dec2_desc" class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Running MariaDB on a dedicated Proxmox VM outside Kubernetes makes stateful lifecycle management rock-solid-enabling instant hypervisor snapshots and isolated firewall rules.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-5 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800">
+            <span class="font-mono text-xs font-bold text-pink-500">03 // REPRODUCIBILITY</span>
+            <h3 data-i18n="dec3_title" class="mt-2 font-bold text-base text-slate-900 dark:text-white">
+              Declarative GitOps via ArgoCD
+            </h3>
+            <p data-i18n="dec3_desc" class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Zero manual changes in production. Every manifest and Helm release lives in private Bitbucket repositories; ArgoCD continuously reconciles cluster state with Git.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-5 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800">
+            <span class="font-mono text-xs font-bold text-emerald-500">04 // REAL-TIME COMMS</span>
+            <h3 data-i18n="dec4_title" class="mt-2 font-bold text-base text-slate-900 dark:text-white">
+              Talk + High Performance Backend
+            </h3>
+            <p data-i18n="dec4_desc" class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Offloading WebRTC media streams to a dedicated Spreed Signaling HPB keeps video conferences crisp for teams while protecting core Nextcloud web workers from CPU spikes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTERPRISE & PUBLIC SECTOR PORTFOLIO SECTION -->
+    <section id="projects" class="py-16 sm:py-24 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            // PRODUCTION TRACK RECORD
+          </span>
+          <h2 data-i18n="proj_heading" class="mt-2 text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Enterprise &amp; Public Sector Case Studies
+          </h2>
+          <p data-i18n="proj_subheading" class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+            Real-world cloud infrastructure, compliance-by-design, and mission-critical Kubernetes operations delivered in high-stakes Dutch environments.
+          </p>
+        </div>
+
+        <div class="mt-10 space-y-8">
+          <!-- CASE STUDY 1: CENTRIC -->
+          <article class="rounded-2xl p-6 sm:p-8 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+              <div>
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-semibold">
+                    PUBLIC SECTOR &amp; SOVEREIGN CLOUD
+                  </span>
+                  <span class="font-mono text-xs text-slate-400">centric_sovereign.md</span>
+                </div>
+                <h3 class="mt-2.5 text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                  Centric - Public Sector Azure &amp; Sovereign Digital Workplace
+                </h3>
+                <p data-i18n="centric_role" class="mt-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                  Role: Infrastructure Specialist / Cloud Engineer
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2 font-mono text-xs">
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Azure Bicep</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Microsoft CAF</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Nextcloud K8s</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Rancher</span>
+              </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-elevated/70 border border-slate-200/60 dark:border-slate-800">
+                <h4 data-i18n="centric_c1_title" class="font-bold text-slate-900 dark:text-white text-base">
+                  Government Cloud Landing Zones
+                </h4>
+                <p data-i18n="centric_c1_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Designed and deployed secure Azure landing zones for Dutch municipalities and government agencies fully as-code using Bicep, adhering strictly to the Microsoft Cloud Adoption Framework (CAF) and national security baselines.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-elevated/70 border border-slate-200/60 dark:border-slate-800">
+                <h4 data-i18n="centric_c2_title" class="font-bold text-slate-900 dark:text-white text-base">
+                  Sovereign Digital Workplace PoC
+                </h4>
+                <p data-i18n="centric_c2_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Spearheaded a strategic alternative to standard Big Tech office suites (such as Microsoft 365), enabling public institutions to retain 100% data ownership, jurisdictional control, and operational autonomy.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-elevated/70 border border-slate-200/60 dark:border-slate-800">
+                <h4 data-i18n="centric_c3_title" class="font-bold text-slate-900 dark:text-white text-base">
+                  Lead Architecture: Nextcloud on Kubernetes
+                </h4>
+                <p data-i18n="centric_c3_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Leading technical realization of a High-Availability Nextcloud architecture on Kubernetes-combining cloud-native horizontal scalability with strict EU data residency guarantees.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 2: PRORAIL -->
+          <article class="rounded-2xl p-6 sm:p-8 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+              <div>
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="px-3 py-1 rounded-lg bg-sky-500/10 text-sky-700 dark:text-sky-400 font-mono text-xs font-semibold">
+                    MISSION-CRITICAL RAILWAY INFRASTRUCTURE
+                  </span>
+                  <span class="font-mono text-xs text-slate-400">prorail_aks.md</span>
+                </div>
+                <h3 class="mt-2.5 text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                  ProRail - Enterprise AKS &amp; Cloud Automation
+                </h3>
+                <p data-i18n="prorail_role" class="mt-1 text-sm font-medium text-sky-600 dark:text-sky-400">
+                  Role: Cloud Automation Engineer / Kubernetes Operations Engineer
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2 font-mono text-xs">
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Azure AKS</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Traefik</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">LGTM Stack</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-elevated border border-slate-200 dark:border-slate-700">Terraform</span>
+              </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-elevated/70 border border-slate-200/60 dark:border-slate-800">
+                <h4 data-i18n="prorail_c1_title" class="font-bold text-slate-900 dark:text-white text-base">
+                  Zero-Downtime CI/CD &amp; Core Platform
+                </h4>
+                <p data-i18n="prorail_c1_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Automated lifecycle management of mission-critical AKS clusters supporting national railway Java applications, including Keycloak IAM and RabbitMQ messaging, enabling monthly patch rollouts with zero downtime via Jenkins &amp; Bitbucket.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-elevated/70 border border-slate-200/60 dark:border-slate-800">
+                <h4 data-i18n="prorail_c2_title" class="font-bold text-slate-900 dark:text-white text-base">
+                  NGINX &rarr; Traefik &amp; ELK &rarr; LGTM Migration
+                </h4>
+                <p data-i18n="prorail_c2_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Executed a major architectural modernization: migrated ingress from NGINX to Traefik and replaced a heavy legacy ELK cluster with Grafana, Loki, Tempo, and Mimir-delivering faster queries, distributed tracing, and lower compute footprint.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-elevated/70 border border-slate-200/60 dark:border-slate-800">
+                <h4 data-i18n="prorail_c3_title" class="font-bold text-slate-900 dark:text-white text-base">
+                  Terraform IaC &amp; Least-Privilege RBAC
+                </h4>
+                <p data-i18n="prorail_c3_desc" class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Codified cluster provisioning with Terraform and drastically reduced the attack surface by eliminating standing Global Owner/Contributor permissions in favor of fine-grained CAF Least-Privilege RBAC.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN-SOURCE HELM CHARTS SECTION -->
+    <section id="charts" class="py-16 sm:py-24 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-100/60 dark:bg-surface/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="max-w-3xl">
+            <span class="font-mono text-xs font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+              // OPEN SOURCE &amp; INFRASTRUCTURE AS CODE
+            </span>
+            <h2 data-i18n="charts_heading" class="mt-2 text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Merux Public Helm Chart Repository
+            </h2>
+            <p data-i18n="charts_subheading" class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+              Standardized, hardened Kubernetes Helm charts built from real production deployments-free for both self-hosters and enterprise platform teams.
+            </p>
+          </div>
+          <a
+            href="https://charts.merux.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 dark:bg-elevated hover:bg-slate-800 text-white font-semibold text-sm border border-slate-700 transition-all self-start"
+          >
+            <span data-i18n="charts_visit">Visit charts.merux.dev</span>
+            <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Quick Repository Add Terminal Box -->
+        <div class="mt-8 rounded-2xl p-4 sm:p-5 bg-[#080D19] border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="font-mono text-xs sm:text-sm text-slate-200 overflow-x-auto">
+            <span class="text-emerald-400 select-none">$ </span>
+            <code id="cmd-repo-add">helm repo add merux https://charts.merux.dev &amp;&amp; helm repo update</code>
+          </div>
+          <button
+            type="button"
+            onclick="copyCommand('helm repo add merux https://charts.merux.dev && helm repo update')"
+            class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-mono text-xs font-semibold border border-slate-700 transition-colors shrink-0 cursor-pointer"
+          >
+            <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span data-i18n="copy_btn">Copy Command</span>
+          </button>
+        </div>
+
+        <!-- 3 Available Helm Charts Grid -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Chart 1 -->
+          <div class="rounded-2xl p-6 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-sm font-bold text-sky-600 dark:text-sky-400">merux/nextcloud-aio-talk</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[11px]">Chart</span>
+              </div>
+              <p data-i18n="chart1_desc" class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Production-ready Helm chart for deploying Nextcloud Talk integrations on Kubernetes clusters with clean service discovery.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+              <code class="text-xs font-mono text-slate-500 dark:text-slate-400 truncate">helm install talk merux/nextcloud-aio-talk</code>
+              <button
+                type="button"
+                onclick="copyCommand('helm install my-release merux/nextcloud-aio-talk')"
+                aria-label="Copy nextcloud-aio-talk install command"
+                class="p-2 rounded-lg bg-slate-100 dark:bg-elevated hover:text-emerald-400 transition-colors cursor-pointer shrink-0"
+              >
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chart 2 -->
+          <div class="rounded-2xl p-6 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-sm font-bold text-sky-600 dark:text-sky-400">merux/nextcloud-spreed</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[11px]">HPB Signaling</span>
+              </div>
+              <p data-i18n="chart2_desc" class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Dedicated Nextcloud Spreed High Performance Backend (HPB) signaling chart for low-latency WebRTC audio/video calls at scale.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+              <code class="text-xs font-mono text-slate-500 dark:text-slate-400 truncate">helm install spreed merux/nextcloud-spreed</code>
+              <button
+                type="button"
+                onclick="copyCommand('helm install my-release merux/nextcloud-spreed')"
+                aria-label="Copy nextcloud-spreed install command"
+                class="p-2 rounded-lg bg-slate-100 dark:bg-elevated hover:text-emerald-400 transition-colors cursor-pointer shrink-0"
+              >
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chart 3 -->
+          <div class="rounded-2xl p-6 bg-white dark:bg-surface border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-sm font-bold text-sky-600 dark:text-sky-400">merux/clamav</span>
+                <span class="px-2 py-0.5 rounded bg-rose-500/10 text-rose-500 font-mono text-[11px]">Security</span>
+              </div>
+              <p data-i18n="chart3_desc" class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Automated ClamAV antivirus daemon chart engineered for seamless integration with Nextcloud file upload scanning pipelines.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+              <code class="text-xs font-mono text-slate-500 dark:text-slate-400 truncate">helm install clamav merux/clamav</code>
+              <button
+                type="button"
+                onclick="copyCommand('helm install my-release merux/clamav')"
+                aria-label="Copy clamav install command"
+                class="p-2 rounded-lg bg-slate-100 dark:bg-elevated hover:text-emerald-400 transition-colors cursor-pointer shrink-0"
+              >
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT JOB & TECHNICAL STACK SECTION -->
+    <section id="about" class="py-16 sm:py-24 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <!-- Left Bio Column (6 cols) -->
+          <div class="lg:col-span-6">
+            <span class="font-mono text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+              // ABOUT THE ENGINEER
+            </span>
+            <h2 data-i18n="about_heading" class="mt-2 text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Hi, I'm Job - Cloud Native Engineer &amp; Kubernetes Engineer
+            </h2>
+            <p data-i18n="about_p1" class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Operating at the intersection of enterprise cloud reliability and open-source container orchestration, I help organizations navigate a critical shift: reclaiming digital sovereignty without sacrificing modern developer velocity.
+            </p>
+            <p data-i18n="about_p2" class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              From securing government Azure environments at Centric and modernizing mission-critical railway AKS clusters at ProRail, to architecting self-hosted Nextcloud ecosystems on Kubernetes, my philosophy is simple: automate everything as code, eliminate single points of failure, and keep critical data under your own jurisdiction.
+            </p>
+
+            <!-- Social / Profile Links -->
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="https://github.com/Job-IDev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-surface hover:border-emerald-500/50 text-white border border-slate-700 text-sm font-semibold transition-all"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+                <span>GitHub (@Job-IDev)</span>
+              </a>
+              <a
+                href="https://charts.merux.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-surface hover:border-sky-500/50 text-slate-900 dark:text-slate-100 border border-slate-300 dark:border-slate-700 text-sm font-semibold transition-all"
+              >
+                <span>charts.merux.dev</span>
+              </a>
+              <a
+                href="mailto:info@merux.dev"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600/10 hover:bg-emerald-600/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 font-mono text-sm font-semibold transition-all"
+              >
+                <span>info@merux.dev</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Technical Stack Terminal Card (6 cols) -->
+          <div class="lg:col-span-6 rounded-2xl p-6 bg-[#080D19] border border-slate-800 shadow-xl">
+            <div class="flex items-center justify-between pb-3.5 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 font-mono text-xs text-slate-400">info@merux.dev: ~/neofetch --stack</span>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-5 font-mono text-xs sm:text-sm">
+              <div>
+                <div class="text-emerald-400 font-semibold mb-2">[Orchestration &amp; Virtualization]</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Kubernetes</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Azure AKS</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Rancher</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Proxmox VE</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Helm</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">K9s</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="text-sky-400 font-semibold mb-2">[Networking, Identity &amp; Security]</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Traefik</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">MetalLB</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Cert-Manager</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Keycloak IAM</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">ClamAV</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">CAF Least-Privilege</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="text-amber-400 font-semibold mb-2">[Observability &amp; Data Layer]</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Grafana</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Loki</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Tempo</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Mimir</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Prometheus</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">MariaDB / MySQL</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Redis</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">RabbitMQ</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="text-pink-400 font-semibold mb-2">[IaC, GitOps &amp; Automation]</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Terraform</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Azure Bicep</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">ArgoCD</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Ansible</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Jenkins</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">GitLab / Bitbucket</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-200 border border-slate-800">Python &amp; Bash</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & DIRECT INQUIRY SECTION -->
+    <section id="contact" class="py-16 sm:py-24 bg-grid-pattern">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl p-6 sm:p-10 bg-white/95 dark:bg-surface/95 border border-slate-200 dark:border-slate-800 shadow-xl">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 font-mono text-xs font-semibold mb-3">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span data-i18n="contact_badge">DIRECT LINE &bull; RESPONSE WITHIN 24H</span>
+            </div>
+            <h2 data-i18n="contact_heading" class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Start a Conversation
+            </h2>
+            <p data-i18n="contact_subheading" class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+              Interested in implementing a sovereign Nextcloud environment, hiring a Cloud Native / Kubernetes Engineer, or discussing a self-hosting challenge? Compose a structured message below or reach out directly at <strong class="font-mono text-emerald-600 dark:text-emerald-400">info@merux.dev</strong>.
+            </p>
+          </div>
+
+          <form id="inquiry-form" onsubmit="handleInquirySubmit(event)" class="mt-8 space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Visitor Profile -->
+              <div>
+                <label for="visitor-role" data-i18n="form_role_label" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">
+                  I am reaching out as
+                </label>
+                <select
+                  id="visitor-role"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500"
+                >
+                  <option value="Company / Public Sector Organization">Company / Public Sector Organization</option>
+                  <option value="Engineering Lead / Recruiter (Interim or Contract)">Engineering Lead / Recruiter (Interim or Contract)</option>
+                  <option value="Self-Hoster / Fellow Engineer">Self-Hoster / Fellow Engineer</option>
+                </select>
+              </div>
+
+              <!-- Primary Topic -->
+              <div>
+                <label for="visitor-topic" data-i18n="form_topic_label" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">
+                  Primary Topic
+                </label>
+                <select
+                  id="visitor-topic"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500"
+                >
+                  <option value="Sovereign Nextcloud Implementation">Sovereign Nextcloud Implementation</option>
+                  <option value="Kubernetes / Azure AKS Architecture & Operations">Kubernetes / Azure AKS Architecture &amp; Operations</option>
+                  <option value="Observability (LGTM) & GitOps Modernization">Observability (LGTM) &amp; GitOps Modernization</option>
+                  <option value="Open-Source Helm Charts / Technical Sparring">Open-Source Helm Charts / Technical Sparring</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="visitor-name" data-i18n="form_name_label" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">
+                  Your Name &amp; Organization
+                </label>
+                <input
+                  type="text"
+                  id="visitor-name"
+                  required
+                  placeholder="e.g. John Doe - Example Corp"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+
+              <div>
+                <label for="visitor-email" data-i18n="form_email_label" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">
+                  Your Return Email
+                </label>
+                <input
+                  type="email"
+                  id="visitor-email"
+                  required
+                  placeholder="john@organization.eu"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="visitor-message" data-i18n="form_msg_label" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">
+                Project Context, Timeline, or Question
+              </label>
+              <textarea
+                id="visitor-message"
+                rows="4"
+                required
+                placeholder="Tell me briefly about your environment, goals, or opportunity..."
+                class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-elevated border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500"
+              ></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md transition-all cursor-pointer"
+              >
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span data-i18n="form_submit">Open Pre-Filled Email (info@merux.dev)</span>
+              </button>
+
+              <button
+                type="button"
+                onclick="copyEmailAddress()"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-100 dark:bg-elevated hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-mono text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+              >
+                <span data-i18n="form_copy_email">Copy info@merux.dev</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+      <div class="flex items-center gap-2 font-mono">
+        <span class="text-slate-900 dark:text-white font-bold">merux<span class="text-emerald-500">.dev</span></span>
+        <span>&bull;</span>
+        <span data-i18n="footer_tagline">Sovereign Cloud Systems &amp; Kubernetes Architecture</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-5 font-mono text-xs">
+        <a href="https://charts.merux.dev" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Helm Charts</a>
+        <a href="https://github.com/Job-IDev" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">GitHub</a>
+        <a href="mailto:info@merux.dev" class="hover:text-emerald-400 transition-colors">info@merux.dev</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Bilingual Engine, Architecture Node Inspector & Utilities -->
+  <script src="script.js"></script>
 </body>
 </html>
